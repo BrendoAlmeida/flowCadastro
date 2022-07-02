@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Brendo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-07-02 12:11:52 "/>
+        <attribute name="created" value="QnJlbmRvO1BDQlJFTkRPOzIwMjItMDctMDI7IjExOjQ4OjQzICI7MjM4Mg=="/>
+        <attribute name="edited" value="QnJlbmRvO1BDQlJFTkRPOzIwMjItMDctMDI7IjEyOjExOjUyICI7MTsyNDgx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="anoIdade" type="Integer" array="False" size=""/>
+            <declare name="qtdParticipante" type="Integer" array="False" size=""/>
+            <assign variable="qtdParticipante" expression="0"/>
+            <declare name="anoAtual" type="Integer" array="False" size=""/>
+            <assign variable="AnoAtual" expression="2022"/>
+            <declare name="idade" type="Integer" array="False" size=""/>
+            <declare name="opcao" type="Integer" array="False" size=""/>
+            <assign variable="opcao" expression="1"/>
+            <while expression="opcao = 1 and qtdParticipante &lt; 100">
+                <output expression="&quot;Digite seu ano de nascimento:&quot;" newline="True"/>
+                <input variable="anoIdade"/>
+                <assign variable="idade" expression="anoAtual - anoIdade"/>
+                <if expression="idade &gt;= 18">
+                    <then>
+                        <output expression="&quot;Cadastro Permitido&quot;" newline="True"/>
+                        <assign variable="qtdParticipante" expression="qtdParticipante + 1"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Cadastro Inv&#225;lido&quot;" newline="True"/>
+                    </else>
+                </if>
+                <output expression="&quot;Total de participantes &quot; &amp; qtdParticipante" newline="True"/>
+                <output expression="&quot;Cadastrar mais um? 1 - Continuar 2 - Sair&quot;" newline="True"/>
+                <input variable="opcao"/>
+            </while>
+            <output expression="&quot;Total de participantes &quot; &amp; qtdParticipante" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
